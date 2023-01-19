@@ -82,7 +82,7 @@ function areaTriangulo(){
 opcion=1
 while (( $opcion != 6 ))
 	do
-		echo -e "\nMENU \n 1.Crear directorio \n 2.Crear archivo \n 3.Cambiar fecha \n 4.Listar archivos \n 5.Calcular base triángulo \n 6.Salir"
+		echo -e "\nMENU \n 1.Crear directorio \n 2.Crear archivo \n 3.Cambiar fecha \n 4.Listar archivos \n 5.Calcular área triángulo \n 6.Salir"
 		read -p "Elige una opción: " opcion
 
 		case $opcion in 
