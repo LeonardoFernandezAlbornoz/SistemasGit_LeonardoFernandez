@@ -3,13 +3,26 @@
 echo `clear`
 
 function crearDirectorio(){
-	`mkdir $nombreDir`
-	echo Se ha creado el directorio $nombreDir
+
+	if [ -e $nombreDir ]
+	then
+		echo El directorio $nombreDir ya existe
+	else
+		`mkdir $nombreDir`
+		echo Se ha creado el directorio $nombreDir
+	fi
 }
 
 function crearArchivo(){
-	`touch $nombreAr`
-	echo Se ha creado el archivo $nombreAr
+
+	if [ -e $nombreAr ]
+	then
+		echo El archivo $nombreAr ya existe
+	else
+		`touch $nombreAr`
+		echo Se ha creado el archivo $nombreAr
+	fi	
+	
 }
 
 function getMes(){
