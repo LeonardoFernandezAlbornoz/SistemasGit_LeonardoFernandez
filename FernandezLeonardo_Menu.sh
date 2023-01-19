@@ -3,13 +3,26 @@
 echo `clear`
 
 function crearDirectorio(){
-	`mkdir $nombreDir`
-	echo Se ha creado el directorio $nombreDir
+
+	if [ -e $nombreDir ]
+	then
+		echo El directorio $nombreDir ya existe
+	else
+		`mkdir $nombreDir`
+		echo Se ha creado el directorio $nombreDir
+	fi
 }
 
 function crearArchivo(){
-	`touch $nombreAr`
-	echo Se ha creado el archivo $nombreAr
+
+	if [ -e $nombreAr ]
+	then
+		echo El archivo $nombreAr ya existe
+	else
+		`touch $nombreAr`
+		echo Se ha creado el archivo $nombreAr
+	fi	
+	
 }
 
 function getMes(){
@@ -82,7 +95,7 @@ function areaTriangulo(){
 opcion=1
 while (( $opcion != 6 ))
 	do
-		echo -e "\nMENU \n 1.Crear directorio \n 2.Crear archivo \n 3.Cambiar fecha \n 4.Listar archivos \n 5.Calcular base triángulo \n 6.Salir"
+		echo -e "\nMENU \n 1.Crear directorio \n 2.Crear archivo \n 3.Cambiar fecha \n 4.Listar archivos \n 5.Calcular área triángulo \n 6.Salir"
 		read -p "Elige una opción: " opcion
 
 		case $opcion in 
