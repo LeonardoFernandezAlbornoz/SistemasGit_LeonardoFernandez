@@ -28,40 +28,40 @@ function crearArchivo(){
 function getMes(){
 	case $numMes in
 		1) 
-       	 	mes="enero"
-        	;;
-       	 	2)
-       		mes="febrero"
+       	mes="enero"
+        ;;
+       	2)
+       	mes="febrero"
 		;;
-       		3)
-       		mes="marzo"
-       		;;
-       		4)
-       		mes="abril"
-       		;;
-       		5)
-       		mes="mayo"
-       		;;
-       		6)
-       		mes="junio"
-       		;;
-       		7)
-       		mes="julio"
-       		;;
-       		8)
-       		mes="agosto"
+       	3)
+       	mes="marzo"
+       	;;
+       	4)
+       	mes="abril"
+       	;;
+       	5)
+       	mes="mayo"
+       	;;
+       	6)
+       	mes="junio"
+       	;;
+       	7)
+       	mes="julio"
+       	;;
+       	8)
+       	mes="agosto"
 		;;
 		9)
-       		mes="septiembre"
+       	mes="septiembre"
 		;;
 		10)
-       		mes="octubre"
+       	mes="octubre"
 		;;
 		11)
-       		mes="noviembre"
+       	mes="noviembre"
 		;;
 		12)
-       		mes="diciembre"
+       	mes="diciembre"
 		;;
 		*)
 		mes="MES NO VÁLIDO"
@@ -84,7 +84,8 @@ function listarContenido(){
 		else
 			echo `basename $file`: Archivo
 		fi	
-	done		
+	done
+	echo -e 		
 }
 
 function areaTriangulo(){
@@ -95,34 +96,36 @@ function areaTriangulo(){
 opcion=1
 while (( $opcion != 6 ))
 	do
-		echo -e "\nMENU \n 1.Crear directorio \n 2.Crear archivo \n 3.Cambiar fecha \n 4.Listar archivos \n 5.Calcular área triángulo \n 6.Salir"
+		echo -e "MENÚ \n 1.Crear directorio \n 2.Crear archivo \n 3.Cambiar fecha \n 4.Listar archivos \n 5.Calcular área triángulo \n 6.Salir"
 		read -p "Elige una opción: " opcion
 
 		case $opcion in 
 			1)
-			echo -e "\n"
+			echo -e 
 			read -p "Nombre del nuevo directorio: " nombreDir
 			crearDirectorio
+			echo -e 
 			;;
 			2)
-			echo -e "\n"
+			echo -e 
 			read -p "Nombre del nuevo directorio: " nombreAr
 			crearArchivo
+			echo -e 
 			;;
 			3)
-			echo -e "\n"
+			echo -e 
 			read -p "Introduce el día: " dia
 			read -p "Introduce el valor numérico del mes: " numMes
 			read -p "Introduce el año: " anho
 			cambiarFecha
+			echo -e 
 			;;
 			4)
-			echo -e "\n"
-			echo -e "OPCIONES \n 1.Listar contenido del directorio actual \n 2.Listar contenido de otro directorio" 
+			echo -e "\nOPCIONES \n 1.Listar contenido del directorio actual \n 2.Listar contenido de otro directorio" 
 			read -p "Elige una opción: " opcion2
 			case $opcion2 in
 				1)
-				ruta=$HOME/*
+				ruta=`pwd`/*
 				listarContenido
 				;;
 				2)
@@ -130,21 +133,25 @@ while (( $opcion != 6 ))
 				listarContenido
 				;;
 				*)
-				echo La opción no es válida
+				echo -e "\nLa opción no es válida\n"
 				;;
 			esac
 			;;
 			5)
+			echo -e 
 	 		read -p "Introduce la base: " base
 			read -p "Introduce la altura: " altura
 			areaTriangulo $base $altura
 			echo El área del triángulo es: $?
+			echo -e 
 			;;
 			6)
 			opcion=6;
+			echo -e "\nSaliendo..."
+			sleep 1s
 			;;
 			*)
-			echo La opción no es válida
+			echo -e "\nLa opción no es válida\n"
 			opcion=1
 			;;
 		esac		
