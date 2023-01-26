@@ -1,6 +1,6 @@
-﻿$numSuperior=Read-Host "Introduce número superior"
-$numInferior=Read-Host "Introduce número inferior"
-$random=Get-Random -Minimum $numInferior -Maximum $($numSuperior+1)
+﻿[int32]$numSuperior=Read-Host "Introduce número superior"
+[int32]$numInferior=Read-Host "Introduce número inferior"
+[int32]$random=Get-Random -Minimum $($numInferior) -Maximum $($numSuperior+1)
 $intentos=0
 
 do{

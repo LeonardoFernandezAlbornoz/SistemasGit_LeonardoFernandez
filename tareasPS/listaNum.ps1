@@ -2,7 +2,7 @@
 
 do{
 
-    $num=Read-Host "Introduce un número"
+    [int32]$num=Read-Host "Introduce un número"
 
     if($num -ne 0){
         $numeros.Add($num)
